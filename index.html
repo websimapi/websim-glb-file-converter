@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLB Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>GLB File Converter</h1>
+        <p>Upload your GLB file and choose a format to convert to.</p>
+
+        <div class="upload-section">
+            <label for="glbFile" class="file-label">Choose GLB File</label>
+            <input type="file" id="glbFile" accept=".glb">
+            <span id="fileName" class="file-name-display">No file chosen</span>
+        </div>
+
+        <div class="options-section">
+            <fieldset>
+                <legend>Convert to:</legend>
+                <div>
+                    <input type="radio" id="toOBJ" name="format" value="OBJ" checked>
+                    <label for="toOBJ">OBJ (Wavefront)</label>
+                </div>
+                <div>
+                    <input type="radio" id="toFBX" name="format" value="FBX">
+                    <label for="toFBX">FBX (Autodesk)</label>
+                </div>
+            </fieldset>
+        </div>
+
+        <button id="convertButton">Convert</button>
+
+        <div id="statusArea">
+            <p id="statusMessage"></p>
+            <div id="spinner" class="spinner" style="display: none;"></div>
+            <a id="downloadLink" style="display: none;">Download Converted File</a>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
